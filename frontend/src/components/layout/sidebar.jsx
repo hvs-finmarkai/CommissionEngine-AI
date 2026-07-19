@@ -70,22 +70,24 @@ export default function Sidebar({ open, onClose }) {
         />
       )}
       <aside
-        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white border-r border-gray-200 flex flex-col transition-transform duration-200 lg:translate-x-0 lg:static lg:z-auto ${
+        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white border-r border-gray-100 flex flex-col transition-transform duration-200 lg:translate-x-0 lg:static lg:z-auto ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center gap-2 px-5 py-4 border-b border-gray-100">
-          <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">F</span>
+        <div className="flex items-center gap-3 px-5 py-5 border-b border-gray-100">
+          <div className="w-9 h-9 rounded-xl bg-[#7C6BFF] flex items-center justify-center">
+            <span className="text-white font-bold text-base">C</span>
           </div>
-          <span className="font-semibold text-gray-900 text-lg">Finmark.ai</span>
+          <div>
+            <p className="font-bold text-gray-900 text-sm leading-tight">CommissionEngine AI</p>
+          </div>
         </div>
 
         <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
           {navGroups.map((group, gi) => (
-            <div key={gi} className={gi > 0 ? "pt-4" : ""}>
+            <div key={gi} className={gi > 0 ? "pt-5" : ""}>
               {group.title && (
-                <p className="px-3 pb-1 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">
+                <p className="px-3 pb-2 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">
                   {group.title}
                 </p>
               )}
@@ -96,9 +98,9 @@ export default function Sidebar({ open, onClose }) {
                   end={item.path === "/"}
                   onClick={onClose}
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    `flex items-center gap-3 px-3 py-2.5 rounded-lg text-[13px] font-medium transition-all duration-150 ${
                       isActive
-                        ? "bg-violet-50 text-violet-700"
+                        ? "bg-[#7C6BFF] text-white shadow-sm shadow-violet-200"
                         : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                     }`
                   }
@@ -107,11 +109,16 @@ export default function Sidebar({ open, onClose }) {
                     <>
                       <item.icon
                         size={18}
-                        className={isActive ? "text-violet-600" : "text-gray-400"}
+                        strokeWidth={isActive ? 2 : 1.5}
+                        className={isActive ? "text-white" : "text-gray-400"}
                       />
                       <span className="flex-1">{item.label}</span>
                       {item.badge && (
-                        <span className="min-w-[20px] h-5 flex items-center justify-center rounded-full bg-violet-100 text-violet-700 text-xs font-semibold px-1.5">
+                        <span className={`min-w-[20px] h-5 flex items-center justify-center rounded-full text-xs font-semibold px-1.5 ${
+                          isActive
+                            ? "bg-white/20 text-white"
+                            : "bg-red-100 text-red-600"
+                        }`}>
                           {item.badge}
                         </span>
                       )}
@@ -123,15 +130,18 @@ export default function Sidebar({ open, onClose }) {
           ))}
         </nav>
 
-        <div className="border-t border-gray-100 px-4 py-3">
+        <div className="border-t border-gray-100 px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center">
-              <span className="text-violet-700 text-xs font-semibold">FT</span>
+            <div className="w-9 h-9 rounded-full bg-[#7C6BFF] flex items-center justify-center">
+              <span className="text-white text-xs font-bold">FT</span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900 truncate">Finance Team</p>
-              <p className="text-xs text-gray-500 truncate">Denave</p>
+              <p className="text-sm font-semibold text-gray-900 truncate">Finance Team</p>
+              <p className="text-xs text-gray-400 truncate">Denave</p>
             </div>
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
       </aside>

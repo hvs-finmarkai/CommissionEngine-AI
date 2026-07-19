@@ -79,7 +79,7 @@ export default function Approvals() {
                   <span>{workflow.date}</span>
                 </div>
               </div>
-              <Badge className="bg-violet-100 text-violet-800 border-violet-200">
+              <Badge className="bg-[#7C6BFF]/10 text-violet-800 border-violet-200">
                 Level {workflow.currentLevel} of {approvalLevels.length}
               </Badge>
             </div>

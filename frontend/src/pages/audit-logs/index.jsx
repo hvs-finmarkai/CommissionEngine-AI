@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { auditLogs } from "@/data/mock-data";
 
 const actionColors = {
-  COMMISSION_CALCULATE: "bg-violet-100 text-violet-800 border-violet-200",
+  COMMISSION_CALCULATE: "bg-[#7C6BFF]/10 text-violet-800 border-violet-200",
   DATA_IMPORT: "bg-blue-100 text-blue-800 border-blue-200",
   PLAN_UPDATE: "bg-orange-100 text-orange-800 border-orange-200",
   APPROVAL_ACTION: "bg-green-100 text-green-800 border-green-200",
@@ -56,7 +56,7 @@ export default function AuditLogsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold flex items-center gap-2">
-            <Shield className="h-8 w-8 text-violet-600" />
+            <Shield className="h-8 w-8 text-[#7C6BFF]" />
             Audit Logs
           </h1>
           <p className="text-gray-500 mt-1">Complete activity trail and compliance records</p>

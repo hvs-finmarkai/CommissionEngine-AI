@@ -5,7 +5,7 @@ export default function Navbar({ onMenuToggle }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-30 h-16 bg-white border-b border-gray-200 flex items-center gap-4 px-4 lg:px-6">
+    <header className="sticky top-0 z-30 h-16 bg-white border-b border-gray-100 flex items-center gap-4 px-4 lg:px-6">
       <button
         onClick={onMenuToggle}
         className="lg:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100"
@@ -20,7 +20,7 @@ export default function Navbar({ onMenuToggle }) {
           <input
             type="text"
             placeholder="Search employees, plans, KPIs..."
-            className="w-full pl-9 pr-4 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+            className="w-full pl-9 pr-4 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7C6BFF] focus:border-transparent"
           />
         </div>
       </div>
@@ -33,8 +33,8 @@ export default function Navbar({ onMenuToggle }) {
 
         <button className="relative p-2 rounded-lg text-gray-500 hover:bg-gray-100">
           <Bell size={20} />
-          <span className="absolute top-1 right-1 w-4 h-4 flex items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
-            5
+          <span className="absolute top-1 right-1 w-4 h-4 flex items-center justify-center rounded-full bg-[#7C6BFF] text-white text-[10px] font-bold">
+            12
           </span>
         </button>
 
@@ -43,12 +43,12 @@ export default function Navbar({ onMenuToggle }) {
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="flex items-center gap-2 pl-2 pr-1 py-1 rounded-lg hover:bg-gray-50"
           >
-            <div className="w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-[#7C6BFF] flex items-center justify-center">
               <span className="text-white text-xs font-semibold">AD</span>
             </div>
             <div className="hidden md:block text-left">
               <p className="text-sm font-medium text-gray-900 leading-tight">Anita Desai</p>
-              <p className="text-xs text-gray-500 leading-tight">Finance Manager</p>
+              <p className="text-xs text-gray-400 leading-tight">Finance Manager</p>
             </div>
             <ChevronDown size={14} className="text-gray-400" />
           </button>
@@ -59,10 +59,10 @@ export default function Navbar({ onMenuToggle }) {
                 className="fixed inset-0 z-40"
                 onClick={() => setDropdownOpen(false)}
               />
-              <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50 py-1">
-                <div className="px-3 py-2 border-b border-gray-100">
-                  <p className="text-sm font-medium text-gray-900">Anita Desai</p>
-                  <p className="text-xs text-gray-500">Finance Manager</p>
+              <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-gray-100 rounded-xl shadow-lg z-50 py-1 overflow-hidden">
+                <div className="px-3 py-2.5 border-b border-gray-100">
+                  <p className="text-sm font-semibold text-gray-900">Anita Desai</p>
+                  <p className="text-xs text-gray-400">Finance Manager</p>
                 </div>
                 <button className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
                   Profile

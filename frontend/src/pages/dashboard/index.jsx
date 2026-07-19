@@ -66,7 +66,7 @@ export default function Dashboard() {
             Track, validate, and manage commission payouts across your organization.
           </p>
         </div>
-        <Button className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white">
+        <Button className="bg-[#7C6BFF] hover:bg-[#6B5AEE] text-white">
           Quick Actions
         </Button>
       </div>
@@ -109,7 +109,7 @@ export default function Dashboard() {
                     step.status === 'completed'
                       ? 'bg-emerald-500 border-emerald-500 text-white'
                       : step.status === 'active'
-                      ? 'bg-violet-500 border-violet-500 text-white animate-pulse'
+                      ? 'bg-[#7C6BFF] border-[#7C6BFF] text-white animate-pulse'
                       : 'bg-gray-100 border-gray-300 text-gray-400'
                   }`}
                 >
@@ -123,7 +123,7 @@ export default function Dashboard() {
                   step.status === 'completed'
                     ? 'text-emerald-600 font-medium'
                     : step.status === 'active'
-                    ? 'text-violet-600 font-medium'
+                    ? 'text-[#7C6BFF] font-medium'
                     : 'text-gray-400'
                 }`}>
                   {step.label}

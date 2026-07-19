@@ -32,7 +32,7 @@ export default function AIValidation() {
         <Button
           onClick={handleScan}
           disabled={scanning}
-          className="bg-violet-600 hover:bg-violet-700 text-white"
+          className="bg-[#7C6BFF] hover:bg-violet-700 text-white"
         >
           <Zap className="w-4 h-4 mr-2" />
           {scanning ? "Scanning..." : "Run Full Scan"}
@@ -80,12 +80,12 @@ export default function AIValidation() {
 
       <Card className="p-4">
         <div className="flex items-center gap-3 mb-4">
-          <Brain className="w-5 h-5 text-violet-600" />
+          <Brain className="w-5 h-5 text-[#7C6BFF]" />
           <h2 className="text-lg font-semibold">Validation Results</h2>
           <div className="ml-auto flex items-center gap-2">
-            <Shield className="w-4 h-4 text-violet-600" />
+            <Shield className="w-4 h-4 text-[#7C6BFF]" />
             <span className="text-sm font-medium">AI Confidence:</span>
-            <Badge className="bg-violet-100 text-violet-800 border-violet-200">94.2% Accuracy</Badge>
+            <Badge className="bg-[#7C6BFF]/10 text-violet-800 border-violet-200">94.2% Accuracy</Badge>
           </div>
         </div>
         <Table>

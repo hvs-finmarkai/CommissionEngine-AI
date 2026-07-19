@@ -22,7 +22,7 @@ import {
 import { plans } from "@/data/mock-data";
 
 const stats = [
-  { label: "Active Plans", value: "7", icon: FileText, color: "text-violet-600", bg: "bg-violet-50" },
+  { label: "Active Plans", value: "7", icon: FileText, color: "text-[#7C6BFF]", bg: "bg-[#7C6BFF]/5" },
   { label: "Total Employees", value: "4,012", icon: FileText, color: "text-blue-600", bg: "bg-blue-50" },
   { label: "Draft Plans", value: "1", icon: FileText, color: "text-orange-600", bg: "bg-orange-50" },
   { label: "Archived", value: "0", icon: Archive, color: "text-gray-600", bg: "bg-gray-50" },
@@ -63,7 +63,7 @@ export default function PlanBuilder() {
             Create and manage commission plans
           </p>
         </div>
-        <Button className="bg-violet-600 hover:bg-violet-700 text-white">
+        <Button className="bg-[#7C6BFF] hover:bg-violet-700 text-white">
           <Plus className="w-4 h-4 mr-2" />
           Create New Plan
         </Button>
@@ -163,7 +163,7 @@ export default function PlanBuilder() {
               {filteredPlans.map((plan) => (
                 <TableRow
                   key={plan.id}
-                  className="hover:bg-violet-50/50 transition-colors cursor-pointer"
+                  className="hover:bg-[#7C6BFF]/5/50 transition-colors cursor-pointer"
                 >
                   <TableCell className="font-mono text-xs text-gray-600">
                     {plan.id}
