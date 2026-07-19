@@ -57,12 +57,12 @@ const kpiIcons = [
 
 export default function Dashboard() {
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm text-muted-foreground">Welcome back, Anita! 👋</p>
+          <p className="text-sm text-gray-500">Welcome back, Anita! 👋</p>
           <h1 className="text-2xl font-bold tracking-tight">Commission Overview</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-500">
             Track, validate, and manage commission payouts across your organization.
           </p>
         </div>
@@ -82,13 +82,13 @@ export default function Dashboard() {
                 </div>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-muted-foreground font-medium">{kpi.title}</p>
+                <p className="text-xs text-gray-500 font-medium">{kpi.title}</p>
                 <p className="text-xl font-bold">{kpi.value}</p>
                 <div className="flex items-center gap-1">
                   {kpi.trend === 'up' && (
                     <ArrowUpRight className="w-3 h-3 text-emerald-500" />
                   )}
-                  <span className={`text-xs ${kpi.trend === 'up' ? 'text-emerald-500' : kpi.trend === 'urgent' ? 'text-red-500' : 'text-muted-foreground'}`}>
+                  <span className={`text-xs ${kpi.trend === 'up' ? 'text-emerald-500' : kpi.trend === 'urgent' ? 'text-red-500' : 'text-gray-500'}`}>
                     {kpi.subtitle}
                   </span>
                 </div>
@@ -179,7 +179,7 @@ export default function Dashboard() {
                   </div>
                   <div>
                     <p className="text-sm font-medium">{earner.name}</p>
-                    <p className="text-xs text-muted-foreground">Sales</p>
+                    <p className="text-xs text-gray-500">Sales</p>
                   </div>
                 </div>
                 <span className="text-sm font-semibold">{formatCurrency(earner.amount)}</span>
@@ -196,22 +196,22 @@ export default function Dashboard() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b text-left">
-                  <th className="pb-3 font-medium text-muted-foreground">Plan / Payout Type</th>
-                  <th className="pb-3 font-medium text-muted-foreground">Period</th>
-                  <th className="pb-3 font-medium text-muted-foreground">Amount</th>
-                  <th className="pb-3 font-medium text-muted-foreground">Requested By</th>
-                  <th className="pb-3 font-medium text-muted-foreground">Level</th>
-                  <th className="pb-3 font-medium text-muted-foreground">Status</th>
-                  <th className="pb-3 font-medium text-muted-foreground">Date</th>
+                  <th className="pb-3 font-medium text-gray-500">Plan / Payout Type</th>
+                  <th className="pb-3 font-medium text-gray-500">Period</th>
+                  <th className="pb-3 font-medium text-gray-500">Amount</th>
+                  <th className="pb-3 font-medium text-gray-500">Requested By</th>
+                  <th className="pb-3 font-medium text-gray-500">Level</th>
+                  <th className="pb-3 font-medium text-gray-500">Status</th>
+                  <th className="pb-3 font-medium text-gray-500">Date</th>
                 </tr>
               </thead>
               <tbody>
                 {recentApprovals.map((item, index) => (
                   <tr key={index} className="border-b last:border-0">
                     <td className="py-3 font-medium">{item.plan}</td>
-                    <td className="py-3 text-muted-foreground">{item.period}</td>
+                    <td className="py-3 text-gray-500">{item.period}</td>
                     <td className="py-3 font-medium">{formatCurrency(item.amount)}</td>
-                    <td className="py-3 text-muted-foreground">{item.requestedBy}</td>
+                    <td className="py-3 text-gray-500">{item.requestedBy}</td>
                     <td className="py-3">
                       <Badge variant="outline" className="text-xs">{item.level}</Badge>
                     </td>
@@ -228,7 +228,7 @@ export default function Dashboard() {
                         {item.status}
                       </Badge>
                     </td>
-                    <td className="py-3 text-muted-foreground">{item.date}</td>
+                    <td className="py-3 text-gray-500">{item.date}</td>
                   </tr>
                 ))}
               </tbody>
@@ -242,7 +242,7 @@ export default function Dashboard() {
             {pnlImpactSummary.map((item, index) => (
               <div key={index} className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">{item.label}</p>
+                  <p className="text-sm text-gray-500">{item.label}</p>
                   <p className="text-lg font-bold">{item.value}</p>
                 </div>
                 {item.change && (

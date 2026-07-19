@@ -92,10 +92,10 @@ export default function RuleEnginePage() {
   };
 
   return (
-    <div className="p-6 space-y-8">
+    <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Rule Engine</h1>
-        <p className="text-muted-foreground mt-1">
+        <p className="text-gray-500 mt-1">
           Configure commission calculation rules
         </p>
       </div>
@@ -108,7 +108,7 @@ export default function RuleEnginePage() {
                 <stat.icon className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
+                <p className="text-sm text-gray-500">{stat.label}</p>
                 <p className="text-2xl font-bold">{stat.value}</p>
               </div>
             </CardContent>
@@ -130,7 +130,7 @@ export default function RuleEnginePage() {
                 </div>
                 <div>
                   <p className="font-medium">{rule.name}</p>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-sm text-gray-500 mt-1">
                     {rule.description}
                   </p>
                 </div>
@@ -201,15 +201,15 @@ export default function RuleEnginePage() {
                 <CardContent className="p-4">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <p className="text-sm text-muted-foreground">Tier</p>
+                      <p className="text-sm text-gray-500">Tier</p>
                       <p className="text-lg font-semibold">{result.tier}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Rate Applied</p>
+                      <p className="text-sm text-gray-500">Rate Applied</p>
                       <p className="text-lg font-semibold">{result.rate}%</p>
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-gray-500">
                         Estimated Commission
                       </p>
                       <p className="text-lg font-bold text-green-600">

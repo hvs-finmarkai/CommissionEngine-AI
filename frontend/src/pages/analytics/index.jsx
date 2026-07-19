@@ -59,17 +59,17 @@ const insights = [
 
 export default function AnalyticsPage() {
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Analytics</h1>
-        <p className="text-muted-foreground">Commission effectiveness and ROI analysis</p>
+        <p className="text-gray-500">Commission effectiveness and ROI analysis</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Commission ROI</p>
+              <p className="text-sm font-medium text-gray-500">Commission ROI</p>
               <p className="text-2xl font-bold">3.2x</p>
             </div>
             <div className="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
@@ -84,7 +84,7 @@ export default function AnalyticsPage() {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Revenue per ₹1 Commission</p>
+              <p className="text-sm font-medium text-gray-500">Revenue per ₹1 Commission</p>
               <p className="text-2xl font-bold">₹4.22</p>
             </div>
             <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
@@ -99,7 +99,7 @@ export default function AnalyticsPage() {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Avg Payout Time</p>
+              <p className="text-sm font-medium text-gray-500">Avg Payout Time</p>
               <p className="text-2xl font-bold">3.5 days</p>
             </div>
             <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center">
@@ -114,7 +114,7 @@ export default function AnalyticsPage() {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Dispute Resolution</p>
+              <p className="text-sm font-medium text-gray-500">Dispute Resolution</p>
               <p className="text-2xl font-bold">94%</p>
             </div>
             <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
@@ -218,7 +218,7 @@ export default function AnalyticsPage() {
           {insights.map((insight, index) => (
             <li key={index} className="flex items-start gap-3">
               <div className="h-2 w-2 rounded-full bg-indigo-500 mt-2 shrink-0" />
-              <p className="text-sm text-muted-foreground">{insight}</p>
+              <p className="text-sm text-gray-500">{insight}</p>
             </li>
           ))}
         </ul>

@@ -52,14 +52,14 @@ export default function AuditLogsPage() {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold flex items-center gap-2">
             <Shield className="h-8 w-8 text-violet-600" />
             Audit Logs
           </h1>
-          <p className="text-muted-foreground mt-1">Complete activity trail and compliance records</p>
+          <p className="text-gray-500 mt-1">Complete activity trail and compliance records</p>
         </div>
         <Button className="gap-2">
           <Download className="h-4 w-4" />
@@ -70,7 +70,7 @@ export default function AuditLogsPage() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {stats.map((stat) => (
           <Card key={stat.label} className="p-4">
-            <p className="text-sm text-muted-foreground">{stat.label}</p>
+            <p className="text-sm text-gray-500">{stat.label}</p>
             <p className="text-2xl font-bold mt-1">{stat.value}</p>
           </Card>
         ))}
@@ -79,7 +79,7 @@ export default function AuditLogsPage() {
       <Card className="p-4">
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <Calendar className="h-4 w-4 text-gray-500" />
             <Input
               type="date"
               placeholder="Date range"
@@ -89,11 +89,11 @@ export default function AuditLogsPage() {
             />
           </div>
           <div className="flex items-center gap-2">
-            <User className="h-4 w-4 text-muted-foreground" />
+            <User className="h-4 w-4 text-gray-500" />
             <select
               value={selectedUser}
               onChange={(e) => setSelectedUser(e.target.value)}
-              className="border rounded-md px-3 py-2 text-sm bg-background"
+              className="border rounded-md px-3 py-2 text-sm bg-gray-50"
             >
               <option value="">All Users</option>
               {uniqueUsers.map((user) => (
@@ -102,11 +102,11 @@ export default function AuditLogsPage() {
             </select>
           </div>
           <div className="flex items-center gap-2">
-            <Filter className="h-4 w-4 text-muted-foreground" />
+            <Filter className="h-4 w-4 text-gray-500" />
             <select
               value={selectedAction}
               onChange={(e) => setSelectedAction(e.target.value)}
-              className="border rounded-md px-3 py-2 text-sm bg-background"
+              className="border rounded-md px-3 py-2 text-sm bg-gray-50"
             >
               <option value="">All Actions</option>
               {actionTypes.map((action) => (
@@ -115,7 +115,7 @@ export default function AuditLogsPage() {
             </select>
           </div>
           <div className="flex items-center gap-2 flex-1 min-w-[200px]">
-            <Search className="h-4 w-4 text-muted-foreground" />
+            <Search className="h-4 w-4 text-gray-500" />
             <Input
               placeholder="Search logs..."
               value={searchQuery}
@@ -141,7 +141,7 @@ export default function AuditLogsPage() {
           <TableBody>
             {filteredLogs.map((log, index) => (
               <TableRow key={index}>
-                <TableCell className="text-sm text-muted-foreground whitespace-nowrap">
+                <TableCell className="text-sm text-gray-500 whitespace-nowrap">
                   {log.timestamp}
                 </TableCell>
                 <TableCell>
@@ -158,8 +158,8 @@ export default function AuditLogsPage() {
                   </Badge>
                 </TableCell>
                 <TableCell className="text-sm max-w-[200px] truncate">{log.details}</TableCell>
-                <TableCell className="text-sm text-muted-foreground">{log.oldValue || "—"}</TableCell>
-                <TableCell className="text-sm text-muted-foreground">{log.newValue || "—"}</TableCell>
+                <TableCell className="text-sm text-gray-500">{log.oldValue || "—"}</TableCell>
+                <TableCell className="text-sm text-gray-500">{log.newValue || "—"}</TableCell>
               </TableRow>
             ))}
           </TableBody>

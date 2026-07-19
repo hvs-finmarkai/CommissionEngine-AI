@@ -82,12 +82,12 @@ export default function CalculatorPage() {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">
           Commission Calculator
         </h1>
-        <p className="text-muted-foreground mt-1">
+        <p className="text-gray-500 mt-1">
           Calculate and review employee commission payouts
         </p>
       </div>
@@ -96,7 +96,7 @@ export default function CalculatorPage() {
         <CardContent className="p-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
               <Input
                 placeholder="Search employee..."
                 className="pl-9"
@@ -105,7 +105,7 @@ export default function CalculatorPage() {
               />
             </div>
             <select
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex h-10 w-full rounded-md border border-input bg-gray-50 px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               value={selectedPlan}
               onChange={(e) => setSelectedPlan(e.target.value)}
             >
@@ -116,7 +116,7 @@ export default function CalculatorPage() {
               ))}
             </select>
             <select
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex h-10 w-full rounded-md border border-input bg-gray-50 px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               value={selectedPeriod}
               onChange={(e) => setSelectedPeriod(e.target.value)}
             >
@@ -228,7 +228,7 @@ export default function CalculatorPage() {
                               {breakdownData[row.id].map((step) => (
                                 <div
                                   key={step.step}
-                                  className="flex items-center justify-between py-1 px-3 rounded-md bg-background border"
+                                  className="flex items-center justify-between py-1 px-3 rounded-md bg-gray-50 border"
                                 >
                                   <div className="flex items-center gap-3">
                                     <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">
@@ -254,7 +254,7 @@ export default function CalculatorPage() {
                   <TableRow>
                     <TableCell
                       colSpan={13}
-                      className="text-center py-8 text-muted-foreground"
+                      className="text-center py-8 text-gray-500"
                     >
                       No matching records found
                     </TableCell>

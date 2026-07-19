@@ -44,10 +44,10 @@ export default function ReportsPage() {
   const [scheduledEnabled, setScheduledEnabled] = useState(true);
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Reports</h1>
-        <p className="text-muted-foreground">Generate and export commission reports</p>
+        <p className="text-gray-500">Generate and export commission reports</p>
       </div>
 
       <div>
@@ -64,7 +64,7 @@ export default function ReportsPage() {
                     </div>
                     <h3 className="font-semibold text-sm">{template.name}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">{template.description}</p>
+                  <p className="text-sm text-gray-500 mb-4">{template.description}</p>
                 </div>
                 <Button size="sm" className="w-full">Generate</Button>
               </Card>
@@ -115,7 +115,7 @@ export default function ReportsPage() {
             </div>
             <div>
               <h3 className="font-semibold">Scheduled Report Generation</h3>
-              <p className="text-sm text-muted-foreground">Automatically generate and email reports on schedule</p>
+              <p className="text-sm text-gray-500">Automatically generate and email reports on schedule</p>
             </div>
           </div>
           <button
@@ -128,15 +128,15 @@ export default function ReportsPage() {
         {scheduledEnabled && (
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t">
             <div className="flex items-center gap-2 text-sm">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <Calendar className="h-4 w-4 text-gray-500" />
               <span>Monthly Payout Report — 1st of every month</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <Calendar className="h-4 w-4 text-gray-500" />
               <span>Quarterly Summary — End of quarter</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <Calendar className="h-4 w-4 text-gray-500" />
               <span>Variance Report — Every Friday</span>
             </div>
           </div>

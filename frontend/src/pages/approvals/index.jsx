@@ -14,10 +14,10 @@ const approvalLevels = ["Sales Manager", "Finance", "HR", "Payroll"];
 
 export default function Approvals() {
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Approval Workflow</h1>
-        <p className="text-muted-foreground mt-1">
+        <p className="text-gray-500 mt-1">
           Multi-level commission approval pipeline
         </p>
       </div>
@@ -26,7 +26,7 @@ export default function Approvals() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">Pending</p>
+              <p className="text-sm text-gray-500">Pending</p>
               <p className="text-2xl font-bold text-orange-600">23</p>
             </div>
             <Clock className="w-8 h-8 text-orange-500" />
@@ -35,7 +35,7 @@ export default function Approvals() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">In Progress</p>
+              <p className="text-sm text-gray-500">In Progress</p>
               <p className="text-2xl font-bold text-blue-600">5</p>
             </div>
             <ArrowRight className="w-8 h-8 text-blue-500" />
@@ -44,7 +44,7 @@ export default function Approvals() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">Approved This Month</p>
+              <p className="text-sm text-gray-500">Approved This Month</p>
               <p className="text-2xl font-bold text-green-600">18</p>
             </div>
             <CheckCircle2 className="w-8 h-8 text-green-500" />
@@ -53,7 +53,7 @@ export default function Approvals() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">Rejected</p>
+              <p className="text-sm text-gray-500">Rejected</p>
               <p className="text-2xl font-bold text-red-600">2</p>
             </div>
             <XCircle className="w-8 h-8 text-red-500" />
@@ -67,8 +67,8 @@ export default function Approvals() {
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-lg font-semibold">{workflow.planName}</h3>
-                <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">
+                <div className="flex items-center gap-4 mt-1 text-sm text-gray-500">
+                  <span className="font-medium text-gray-900">
                     ${workflow.amount.toLocaleString()}
                   </span>
                   <span className="flex items-center gap-1">
@@ -108,7 +108,7 @@ export default function Approvals() {
                       <p className={`text-sm font-medium ${!config ? "text-gray-400" : ""}`}>
                         {level}
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-gray-500">
                         {config ? config.label : "Waiting"}
                       </p>
                     </div>
@@ -119,8 +119,8 @@ export default function Approvals() {
 
             {workflow.comment && (
               <div className="flex items-start gap-2 p-3 bg-muted rounded-md mb-4">
-                <MessageSquare className="w-4 h-4 text-muted-foreground mt-0.5" />
-                <p className="text-sm text-muted-foreground">{workflow.comment}</p>
+                <MessageSquare className="w-4 h-4 text-gray-500 mt-0.5" />
+                <p className="text-sm text-gray-500">{workflow.comment}</p>
               </div>
             )}
 

@@ -21,11 +21,11 @@ export default function AIValidation() {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">AI Validation</h1>
-          <p className="text-muted-foreground mt-1">
+          <p className="text-gray-500 mt-1">
             Automated anomaly detection and commission verification
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function AIValidation() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">Total Issues</p>
+              <p className="text-sm text-gray-500">Total Issues</p>
               <p className="text-2xl font-bold">8</p>
             </div>
             <AlertTriangle className="w-8 h-8 text-violet-500" />
@@ -52,7 +52,7 @@ export default function AIValidation() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">High Severity</p>
+              <p className="text-sm text-gray-500">High Severity</p>
               <p className="text-2xl font-bold text-red-600">3</p>
             </div>
             <XCircle className="w-8 h-8 text-red-500" />
@@ -61,7 +61,7 @@ export default function AIValidation() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">Medium Severity</p>
+              <p className="text-sm text-gray-500">Medium Severity</p>
               <p className="text-2xl font-bold text-orange-600">3</p>
             </div>
             <AlertTriangle className="w-8 h-8 text-orange-500" />
@@ -70,7 +70,7 @@ export default function AIValidation() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-muted-foreground">Low Severity</p>
+              <p className="text-sm text-gray-500">Low Severity</p>
               <p className="text-2xl font-bold text-green-600">2</p>
             </div>
             <CheckCircle2 className="w-8 h-8 text-green-500" />
@@ -118,7 +118,7 @@ export default function AIValidation() {
                   </span>
                 </TableCell>
                 <TableCell>
-                  <p className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded max-w-[200px]">
+                  <p className="text-sm text-gray-500 bg-muted px-2 py-1 rounded max-w-[200px]">
                     {item.aiRecommendation}
                   </p>
                 </TableCell>

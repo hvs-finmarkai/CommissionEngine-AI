@@ -38,13 +38,13 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold flex items-center gap-2">
           <Settings className="h-8 w-8 text-gray-700" />
           Settings
         </h1>
-        <p className="text-muted-foreground mt-1">Organization and system configuration</p>
+        <p className="text-gray-500 mt-1">Organization and system configuration</p>
       </div>
 
       <Tabs defaultValue="organization" className="space-y-6">
@@ -58,7 +58,7 @@ export default function SettingsPage() {
         </TabsList>
 
         <TabsContent value="organization">
-          <Card className="p-6 space-y-6">
+          <Card className="space-y-6">
             <h2 className="text-xl font-semibold">Organization Details</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -101,7 +101,7 @@ export default function SettingsPage() {
         </TabsContent>
 
         <TabsContent value="roles">
-          <Card className="p-6 space-y-6">
+          <Card className="space-y-6">
             <h2 className="text-xl font-semibold">Roles & Permissions</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
@@ -142,7 +142,7 @@ export default function SettingsPage() {
         </TabsContent>
 
         <TabsContent value="approval">
-          <Card className="p-6 space-y-6">
+          <Card className="space-y-6">
             <h2 className="text-xl font-semibold">Approval Matrix</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -177,7 +177,7 @@ export default function SettingsPage() {
         </TabsContent>
 
         <TabsContent value="fiscal">
-          <Card className="p-6 space-y-6">
+          <Card className="space-y-6">
             <h2 className="text-xl font-semibold">Fiscal Calendar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -204,41 +204,41 @@ export default function SettingsPage() {
         </TabsContent>
 
         <TabsContent value="notifications">
-          <Card className="p-6 space-y-6">
+          <Card className="space-y-6">
             <h2 className="text-xl font-semibold">Notification Preferences</h2>
             <div className="space-y-4">
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Commission Calculated</p>
-                  <p className="text-sm text-muted-foreground">Notify when commission calculations complete</p>
+                  <p className="text-sm text-gray-500">Notify when commission calculations complete</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Approval Required</p>
-                  <p className="text-sm text-muted-foreground">Notify when approval is pending</p>
+                  <p className="text-sm text-gray-500">Notify when approval is pending</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Dispute Filed</p>
-                  <p className="text-sm text-muted-foreground">Notify when a dispute is created</p>
+                  <p className="text-sm text-gray-500">Notify when a dispute is created</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Data Import Complete</p>
-                  <p className="text-sm text-muted-foreground">Notify when data imports finish</p>
+                  <p className="text-sm text-gray-500">Notify when data imports finish</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">System Alerts</p>
-                  <p className="text-sm text-muted-foreground">Critical system notifications</p>
+                  <p className="text-sm text-gray-500">Critical system notifications</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
@@ -250,7 +250,7 @@ export default function SettingsPage() {
         </TabsContent>
 
         <TabsContent value="integrations">
-          <Card className="p-6 space-y-6">
+          <Card className="space-y-6">
             <h2 className="text-xl font-semibold">Integrations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
