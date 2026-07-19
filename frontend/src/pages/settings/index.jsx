@@ -26,7 +26,7 @@ const tabs = [
 ];
 
 export default function SettingsPage() {
-  const [companyName, setCompanyName] = useState("Denave India Pvt Ltd");
+  const [companyName, setCompanyName] = useState("Finmark.ai");
   const [currency, setCurrency] = useState("₹ INR");
   const [fiscalYear, setFiscalYear] = useState("Apr-Mar");
   const [rolesData, setRolesData] = useState(roles);
