@@ -6,15 +6,16 @@ from pydantic import BaseModel, EmailStr
 router = APIRouter(prefix="/api/users", tags=["User Management"])
 
 users_db = [
-    {"id": 1, "name": "Anita Desai", "email": "anita@finmark.ai", "role": "Admin", "department": "Finance", "status": "active", "last_login": "19 Jul 2026, 09:00 AM", "created_at": "2025-01-15"},
-    {"id": 2, "name": "Vikash Kumar", "email": "vikash@finmark.ai", "role": "Sales Manager", "department": "Sales", "status": "active", "last_login": "19 Jul 2026, 08:45 AM", "created_at": "2025-02-01"},
-    {"id": 3, "name": "Priya Sharma", "email": "priya@finmark.ai", "role": "Finance", "department": "Finance", "status": "active", "last_login": "18 Jul 2026, 06:30 PM", "created_at": "2025-03-10"},
-    {"id": 4, "name": "Rahul Verma", "email": "rahul@finmark.ai", "role": "HR", "department": "HR", "status": "active", "last_login": "18 Jul 2026, 05:15 PM", "created_at": "2025-04-05"},
-    {"id": 5, "name": "Neha Singh", "email": "neha@finmark.ai", "role": "Employee", "department": "Sales", "status": "active", "last_login": "17 Jul 2026, 04:00 PM", "created_at": "2025-05-20"},
-    {"id": 6, "name": "Arjun Patel", "email": "arjun@finmark.ai", "role": "Employee", "department": "Operations", "status": "inactive", "last_login": "10 Jul 2026, 11:00 AM", "created_at": "2025-06-15"},
+    {"id": 1, "name": "Anita Desai", "email": "anita@finmark.ai", "password": "admin123", "role": "Admin", "department": "Finance", "status": "active", "last_login": "19 Jul 2026, 09:00 AM", "created_at": "2025-01-15"},
+    {"id": 2, "name": "Vikash Kumar", "email": "vikash@finmark.ai", "password": "admin123", "role": "Sales Manager", "department": "Sales", "status": "active", "last_login": "19 Jul 2026, 08:45 AM", "created_at": "2025-02-01"},
+    {"id": 3, "name": "Priya Sharma", "email": "priya@finmark.ai", "password": "admin123", "role": "Finance", "department": "Finance", "status": "active", "last_login": "18 Jul 2026, 06:30 PM", "created_at": "2025-03-10"},
+    {"id": 4, "name": "Rahul Verma", "email": "rahul@finmark.ai", "password": "admin123", "role": "HR", "department": "HR", "status": "active", "last_login": "18 Jul 2026, 05:15 PM", "created_at": "2025-04-05"},
+    {"id": 5, "name": "Neha Singh", "email": "neha@finmark.ai", "password": "admin123", "role": "Employee", "department": "Sales", "status": "active", "last_login": "17 Jul 2026, 04:00 PM", "created_at": "2025-05-20"},
+    {"id": 6, "name": "Arjun Patel", "email": "arjun@finmark.ai", "password": "admin123", "role": "Employee", "department": "Operations", "status": "inactive", "last_login": "10 Jul 2026, 11:00 AM", "created_at": "2025-06-15"},
+    {"id": 7, "name": "Admin", "email": "admin@finmark.ai", "password": "admin123", "role": "Admin", "department": "Finance", "status": "active", "last_login": "19 Jul 2026, 09:30 AM", "created_at": "2025-01-01"},
 ]
 
-next_id = 7
+next_id = 8
 
 
 class UserCreate(BaseModel):
@@ -35,7 +36,8 @@ class UserUpdate(BaseModel):
 
 @router.get("")
 async def list_users():
-    return {"users": users_db, "total": len(users_db)}
+    safe_users = [{k: v for k, v in u.items() if k != "password"} for u in users_db]
+    return {"users": safe_users, "total": len(safe_users)}
 
 
 @router.get("/{user_id}")
@@ -43,7 +45,7 @@ async def get_user(user_id: int):
     user = next((u for u in users_db if u["id"] == user_id), None)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    return user
+    return {k: v for k, v in user.items() if k != "password"}
 
 
 @router.post("", status_code=201)
@@ -55,6 +57,7 @@ async def create_user(data: UserCreate):
         "id": next_id,
         "name": data.name,
         "email": data.email,
+        "password": data.password,
         "role": data.role,
         "department": data.department,
         "status": "active",

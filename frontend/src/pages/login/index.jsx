@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useAppStore from '@/hooks/use-app-store'
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://commissionengine-api.onrender.com'
+
 export default function LoginPage() {
   const navigate = useNavigate()
   const { login } = useAppStore()
@@ -16,10 +18,15 @@ export default function LoginPage() {
     setLoading(true)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800))
+      const res = await fetch(`${API_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      })
 
-      if (email === 'admin@finmark.ai' && password === 'admin123') {
-        const userData = { email, name: 'Admin', role: 'admin' }
+      if (res.ok) {
+        const data = await res.json()
+        const userData = { email: data.user.email, name: data.user.full_name, role: data.user.role }
         localStorage.setItem('user', JSON.stringify(userData))
         login(userData)
         navigate('/')

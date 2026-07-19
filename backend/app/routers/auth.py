@@ -90,13 +90,19 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
 
 @router.post("/login", response_model=TokenResponse, status_code=status.HTTP_200_OK)
 async def login(credentials: LoginRequest, db: Session = Depends(get_db)):
+    from app.routers.users import users_db
+    user = next((u for u in users_db if u["email"] == credentials.email), None)
+    if not user or user.get("password") != credentials.password:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    if user.get("status") == "inactive":
+        raise HTTPException(status_code=403, detail="Account is inactive")
     mock_user = {
-        "id": 1,
-        "email": credentials.email,
-        "full_name": "Admin User",
-        "role": "admin",
-        "department": "finance",
-        "is_active": True,
+        "id": user["id"],
+        "email": user["email"],
+        "full_name": user["name"],
+        "role": user["role"].lower(),
+        "department": user["department"].lower(),
+        "is_active": user["status"] == "active",
         "created_at": datetime(2025, 1, 15, 9, 0, 0),
     }
     access_token = create_access_token(data={"sub": credentials.email})
