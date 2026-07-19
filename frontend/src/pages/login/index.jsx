@@ -39,7 +39,10 @@ export default function LoginPage() {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7C6BFF]">
-              <span className="text-2xl font-bold text-white">C</span>
+              <svg className="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
             </div>
           </div>
           <h1 className="text-2xl font-bold text-white">CommissionEngine AI</h1>

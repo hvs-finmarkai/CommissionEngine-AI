@@ -103,11 +103,12 @@ export default function Sidebar() {
     >
       <div className="flex h-16 items-center gap-3 px-4 border-b border-gray-200 dark:border-gray-800">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#7C6BFF]">
-          <span className="text-white font-bold text-base">C</span>
+          <TrendingUp className="h-5 w-5 text-white" />
         </div>
         {!sidebarCollapsed && (
           <div className="flex-1 min-w-0">
             <p className="text-sm font-bold truncate">CommissionEngine AI</p>
+            <p className="text-[10px] text-gray-500 dark:text-gray-400 truncate">AI-Powered Commission Platform</p>
           </div>
         )}
         <button
