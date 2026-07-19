@@ -9,6 +9,8 @@ import PerformanceIntake from './pages/performance-intake'
 import RuleEngine from './pages/rule-engine'
 import Calculator from './pages/calculator'
 import AIValidation from './pages/ai-validation'
+import AIAnomalies from './pages/ai-validation/anomalies'
+import AIOverrides from './pages/ai-validation/overrides'
 import Approvals from './pages/approvals'
 import PnLImpact from './pages/pnl-impact'
 import RepPortal from './pages/rep-portal'
@@ -34,6 +36,8 @@ export default function App() {
               <Route path="/rule-engine" element={<RuleEngine />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/ai-validation" element={<AIValidation />} />
+            <Route path="/ai-validation/anomalies" element={<AIAnomalies />} />
+            <Route path="/ai-validation/overrides" element={<AIOverrides />} />
               <Route path="/approvals" element={<Approvals />} />
               <Route path="/pnl-impact" element={<PnLImpact />} />
               <Route path="/rep-portal" element={<RepPortal />} />
