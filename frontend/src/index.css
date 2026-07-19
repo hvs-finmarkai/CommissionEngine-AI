@@ -3,27 +3,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.light body,
-:root body {
-  background-color: #F8FAFC;
-  color: #1E293B;
-}
-
-.dark body {
-  background-color: #060E1A;
-  color: #E2E8F0;
 }
 
 ::-webkit-scrollbar {
@@ -36,10 +19,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #94A3B8;
+  background: #CBD5E1;
   border-radius: 3px;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #475569;
 }

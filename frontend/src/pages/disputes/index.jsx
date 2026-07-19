@@ -73,7 +73,7 @@ export default function DisputeManagement() {
           <TableBody>
             {disputes.map((dispute) => (
               <React.Fragment key={dispute.id}>
-                <TableRow className="cursor-pointer hover:bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]" onClick={() => toggleExpand(dispute.id)}>
+                <TableRow className="cursor-pointer hover:bg-gray-50 dark:bg-[#0A1628]" onClick={() => toggleExpand(dispute.id)}>
                   <TableCell className="font-medium">{dispute.id}</TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2">

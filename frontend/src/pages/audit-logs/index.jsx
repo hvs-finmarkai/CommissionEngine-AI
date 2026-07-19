@@ -93,7 +93,7 @@ export default function AuditLogsPage() {
             <select
               value={selectedUser}
               onChange={(e) => setSelectedUser(e.target.value)}
-              className="border rounded-md px-3 py-2 text-sm bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]"
+              className="border rounded-md px-3 py-2 text-sm bg-gray-50 dark:bg-[#0A1628]"
             >
               <option value="">All Users</option>
               {uniqueUsers.map((user) => (
@@ -106,7 +106,7 @@ export default function AuditLogsPage() {
             <select
               value={selectedAction}
               onChange={(e) => setSelectedAction(e.target.value)}
-              className="border rounded-md px-3 py-2 text-sm bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]"
+              className="border rounded-md px-3 py-2 text-sm bg-gray-50 dark:bg-[#0A1628]"
             >
               <option value="">All Actions</option>
               {actionTypes.map((action) => (

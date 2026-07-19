@@ -123,7 +123,7 @@ export default function RepPortal() {
             </thead>
             <tbody>
               {earningsData.map((row) => (
-                <tr key={row.month} className="border-b border-gray-100 hover:bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]">
+                <tr key={row.month} className="border-b border-gray-100 hover:bg-gray-50 dark:bg-[#0A1628]">
                   <td className="py-3 px-2 font-medium text-gray-900 dark:text-white">{row.month}</td>
                   <td className="py-3 px-2 text-right text-gray-700 dark:text-gray-200">{row.base}</td>
                   <td className="py-3 px-2 text-right text-gray-700 dark:text-gray-200">{row.accelerator}</td>

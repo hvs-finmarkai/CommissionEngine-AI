@@ -25,7 +25,7 @@ const stats = [
   { label: "Active Plans", value: "7", icon: FileText, color: "text-[#7C6BFF]", bg: "bg-[#7C6BFF]/5" },
   { label: "Total Employees", value: "4,012", icon: FileText, color: "text-blue-600", bg: "bg-blue-50" },
   { label: "Draft Plans", value: "1", icon: FileText, color: "text-orange-600", bg: "bg-orange-50" },
-  { label: "Archived", value: "0", icon: Archive, color: "text-gray-600 dark:text-gray-300", bg: "bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]" },
+  { label: "Archived", value: "0", icon: Archive, color: "text-gray-600 dark:text-gray-300", bg: "bg-gray-50 dark:bg-[#0A1628]" },
 ];
 
 const statusStyles = {

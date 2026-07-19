@@ -127,7 +127,7 @@ export default function AIValidation() {
                     <Button size="sm" variant="outline" className="text-green-600 border-green-200 hover:bg-green-50">
                       Resolve
                     </Button>
-                    <Button size="sm" variant="outline" className="text-gray-600 border-gray-200 hover:bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]">
+                    <Button size="sm" variant="outline" className="text-gray-600 border-gray-200 hover:bg-gray-50 dark:bg-[#0A1628]">
                       Ignore
                     </Button>
                     <Button size="sm" variant="outline" className="text-red-600 border-red-200 hover:bg-red-50">
