@@ -76,7 +76,7 @@ export default function PerformanceIntake() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Performance Intake</h1>
-        <p className="text-gray-500 mt-1">
+        <p className="text-gray-500 dark:text-gray-400 mt-1">
           Import and validate performance data from multiple sources
         </p>
       </div>
@@ -91,7 +91,7 @@ export default function PerformanceIntake() {
                   <Icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">{stat.label}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{stat.label}</p>
                   <p className="text-2xl font-bold">{stat.value}</p>
                 </div>
               </CardContent>
@@ -139,7 +139,7 @@ export default function PerformanceIntake() {
                   <TableCell>
                     <div className="flex items-center gap-2">
                       <Progress value={ds.quality} className="h-2 w-24" />
-                      <span className="text-sm text-gray-500">{ds.quality}%</span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{ds.quality}%</span>
                     </div>
                   </TableCell>
                   <TableCell>
@@ -179,7 +179,7 @@ export default function PerformanceIntake() {
           >
             <FileSpreadsheet className="h-12 w-12 text-gray-500 mb-4" />
             <p className="text-lg font-medium">Drop CSV files here or click to upload</p>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
               Supported formats: .csv, .xlsx, .xls
             </p>
             <input
@@ -221,7 +221,7 @@ export default function PerformanceIntake() {
               >
                 <div className={`h-3 w-3 rounded-full ${item.color}`} />
                 <div>
-                  <p className="text-sm text-gray-500">{item.label}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{item.label}</p>
                   <p className="text-xl font-bold">{item.count}</p>
                 </div>
               </div>

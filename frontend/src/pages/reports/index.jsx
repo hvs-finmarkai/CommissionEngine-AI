@@ -47,7 +47,7 @@ export default function ReportsPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Reports</h1>
-        <p className="text-gray-500">Generate and export commission reports</p>
+        <p className="text-gray-500 dark:text-gray-400 dark:text-gray-500">Generate and export commission reports</p>
       </div>
 
       <div>
@@ -115,28 +115,28 @@ export default function ReportsPage() {
             </div>
             <div>
               <h3 className="font-semibold">Scheduled Report Generation</h3>
-              <p className="text-sm text-gray-500">Automatically generate and email reports on schedule</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Automatically generate and email reports on schedule</p>
             </div>
           </div>
           <button
             onClick={() => setScheduledEnabled(!scheduledEnabled)}
             className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${scheduledEnabled ? "bg-indigo-600" : "bg-gray-200"}`}
           >
-            <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${scheduledEnabled ? "translate-x-6" : "translate-x-1"}`} />
+            <span className={`inline-block h-4 w-4 transform rounded-full bg-white dark:bg-[#0F1D32] transition-transform ${scheduledEnabled ? "translate-x-6" : "translate-x-1"}`} />
           </button>
         </div>
         {scheduledEnabled && (
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t">
             <div className="flex items-center gap-2 text-sm">
-              <Calendar className="h-4 w-4 text-gray-500" />
+              <Calendar className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
               <span>Monthly Payout Report — 1st of every month</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <Calendar className="h-4 w-4 text-gray-500" />
+              <Calendar className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
               <span>Quarterly Summary — End of quarter</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <Calendar className="h-4 w-4 text-gray-500" />
+              <Calendar className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
               <span>Variance Report — Every Friday</span>
             </div>
           </div>

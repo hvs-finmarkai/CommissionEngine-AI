@@ -31,7 +31,7 @@ export default function DisputeManagement() {
     <div className="space-y-6 max-w-7xl mx-auto">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dispute Management</h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dispute Management</h1>
           <p className="text-gray-600 mt-1">Track and resolve commission disputes</p>
         </div>
         <Button className="gap-2">
@@ -48,8 +48,8 @@ export default function DisputeManagement() {
                 <stat.icon className={`h-5 w-5 ${stat.color}`} />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">{stat.count}</p>
-                <p className="text-sm text-gray-500">{stat.label}</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white">{stat.count}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{stat.label}</p>
               </div>
             </div>
           </Card>
@@ -77,7 +77,7 @@ export default function DisputeManagement() {
                   <TableCell className="font-medium">{dispute.id}</TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2">
-                      <User className="h-4 w-4 text-gray-400" />
+                      <User className="h-4 w-4 text-gray-400 dark:text-gray-500" />
                       {dispute.employee}
                     </div>
                   </TableCell>
@@ -91,7 +91,7 @@ export default function DisputeManagement() {
                       {statusConfig[dispute.status]?.label}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600">{dispute.createdDate}</TableCell>
+                  <TableCell className="text-gray-600 dark:text-gray-300">{dispute.createdDate}</TableCell>
                   <TableCell>
                     <div className="flex items-center gap-1">
                       <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
@@ -107,11 +107,11 @@ export default function DisputeManagement() {
                         {dispute.timeline.map((event, idx) => (
                           <div key={idx} className="flex items-start gap-3">
                             <div className="mt-0.5">
-                              <Clock className="h-4 w-4 text-gray-400" />
+                              <Clock className="h-4 w-4 text-gray-400 dark:text-gray-500" />
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-gray-900">{event.action}</p>
-                              <p className="text-xs text-gray-500">{event.date} &middot; {event.by}</p>
+                              <p className="text-sm font-medium text-gray-900 dark:text-white">{event.action}</p>
+                              <p className="text-xs text-gray-500 dark:text-gray-400 dark:text-gray-500">{event.date} &middot; {event.by}</p>
                             </div>
                           </div>
                         ))}

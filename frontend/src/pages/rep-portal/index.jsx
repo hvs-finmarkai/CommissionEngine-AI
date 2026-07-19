@@ -31,13 +31,13 @@ export default function RepPortal() {
             <AvatarFallback className="bg-blue-100 text-blue-700 text-xl font-semibold">VK</AvatarFallback>
           </Avatar>
           <div className="flex-1">
-            <h1 className="text-2xl font-bold text-gray-900">Vikash Kumar</h1>
-            <p className="text-gray-600">Senior Sales Executive</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Vikash Kumar</h1>
+            <p className="text-gray-600 dark:text-gray-300">Senior Sales Executive</p>
             <Badge variant="secondary" className="mt-1">Sales - North</Badge>
           </div>
           <div className="flex items-center gap-2">
-            <User className="h-5 w-5 text-gray-400" />
-            <span className="text-sm text-gray-500">Employee Self-Service</span>
+            <User className="h-5 w-5 text-gray-400 dark:text-gray-500" />
+            <span className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Employee Self-Service</span>
           </div>
         </div>
       </Card>
@@ -45,57 +45,57 @@ export default function RepPortal() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-500">Current Month</span>
-            <Calendar className="h-4 w-4 text-gray-400" />
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Current Month</span>
+            <Calendar className="h-4 w-4 text-gray-400 dark:text-gray-500" />
           </div>
-          <p className="text-2xl font-bold text-gray-900">₹2,45,678</p>
+          <p className="text-2xl font-bold text-gray-900 dark:text-white">₹2,45,678</p>
         </Card>
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-500">YTD Earnings</span>
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">YTD Earnings</span>
             <TrendingUp className="h-4 w-4 text-green-500" />
           </div>
-          <p className="text-2xl font-bold text-gray-900">₹18,92,340</p>
+          <p className="text-2xl font-bold text-gray-900 dark:text-white">₹18,92,340</p>
         </Card>
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-500">Projected Annual</span>
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Projected Annual</span>
             <Target className="h-4 w-4 text-blue-500" />
           </div>
-          <p className="text-2xl font-bold text-gray-900">₹28,50,000</p>
+          <p className="text-2xl font-bold text-gray-900 dark:text-white">₹28,50,000</p>
         </Card>
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-500">Rank</span>
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Rank</span>
             <Award className="h-4 w-4 text-yellow-500" />
           </div>
-          <p className="text-2xl font-bold text-gray-900">#1 <span className="text-sm font-normal text-gray-500">of 520</span></p>
+          <p className="text-2xl font-bold text-gray-900 dark:text-white">#1 <span className="text-sm font-normal text-gray-500 dark:text-gray-400 dark:text-gray-500">of 520</span></p>
         </Card>
       </div>
 
       <Card className="p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <Target className="h-5 w-5 text-gray-700" />
+          <Target className="h-5 w-5 text-gray-700 dark:text-gray-200" />
           Target Progress
         </h2>
         <div className="space-y-5">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">Conversions</span>
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Conversions</span>
               <span className="text-sm font-semibold text-green-600">128%</span>
             </div>
             <Progress value={100} className="h-3 [&>div]:bg-green-500" />
           </div>
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">Quality Score</span>
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Quality Score</span>
               <span className="text-sm font-semibold text-blue-600">92%</span>
             </div>
             <Progress value={92} className="h-3 [&>div]:bg-blue-500" />
           </div>
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">Attendance</span>
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Attendance</span>
               <span className="text-sm font-semibold text-teal-600">96%</span>
             </div>
             <Progress value={96} className="h-3 [&>div]:bg-teal-500" />
@@ -105,31 +105,31 @@ export default function RepPortal() {
 
       <Card className="p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <Calendar className="h-5 w-5 text-gray-700" />
+          <Calendar className="h-5 w-5 text-gray-700 dark:text-gray-200" />
           Monthly Earnings History
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left py-3 px-2 font-medium text-gray-500">Month</th>
-                <th className="text-right py-3 px-2 font-medium text-gray-500">Base</th>
-                <th className="text-right py-3 px-2 font-medium text-gray-500">Accelerator</th>
-                <th className="text-right py-3 px-2 font-medium text-gray-500">Bonus</th>
-                <th className="text-right py-3 px-2 font-medium text-gray-500">Deductions</th>
-                <th className="text-right py-3 px-2 font-medium text-gray-500">Net Commission</th>
-                <th className="text-center py-3 px-2 font-medium text-gray-500">Status</th>
+              <tr className="border-b border-gray-200 dark:border-gray-700">
+                <th className="text-left py-3 px-2 font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Month</th>
+                <th className="text-right py-3 px-2 font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Base</th>
+                <th className="text-right py-3 px-2 font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Accelerator</th>
+                <th className="text-right py-3 px-2 font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Bonus</th>
+                <th className="text-right py-3 px-2 font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Deductions</th>
+                <th className="text-right py-3 px-2 font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Net Commission</th>
+                <th className="text-center py-3 px-2 font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Status</th>
               </tr>
             </thead>
             <tbody>
               {earningsData.map((row) => (
                 <tr key={row.month} className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="py-3 px-2 font-medium text-gray-900">{row.month}</td>
-                  <td className="py-3 px-2 text-right text-gray-700">{row.base}</td>
-                  <td className="py-3 px-2 text-right text-gray-700">{row.accelerator}</td>
-                  <td className="py-3 px-2 text-right text-gray-700">{row.bonus}</td>
+                  <td className="py-3 px-2 font-medium text-gray-900 dark:text-white">{row.month}</td>
+                  <td className="py-3 px-2 text-right text-gray-700 dark:text-gray-200">{row.base}</td>
+                  <td className="py-3 px-2 text-right text-gray-700 dark:text-gray-200">{row.accelerator}</td>
+                  <td className="py-3 px-2 text-right text-gray-700 dark:text-gray-200">{row.bonus}</td>
                   <td className="py-3 px-2 text-right text-red-600">{row.deductions}</td>
-                  <td className="py-3 px-2 text-right font-semibold text-gray-900">{row.net}</td>
+                  <td className="py-3 px-2 text-right font-semibold text-gray-900 dark:text-white">{row.net}</td>
                   <td className="py-3 px-2 text-center">
                     <Badge variant={row.status === "Paid" ? "default" : "secondary"} className={row.status === "Paid" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"}>
                       {row.status}
@@ -144,15 +144,15 @@ export default function RepPortal() {
 
       <Card className="p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <TrendingUp className="h-5 w-5 text-gray-700" />
+          <TrendingUp className="h-5 w-5 text-gray-700 dark:text-gray-200" />
           Commission Breakdown
         </h2>
         <div className="space-y-4">
           {commissionBreakdown.map((item) => (
             <div key={item.label}>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-sm font-medium text-gray-700">{item.label}</span>
-                <span className="text-sm font-semibold text-gray-900">{item.percentage}%</span>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{item.label}</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">{item.percentage}%</span>
               </div>
               <div className="w-full bg-gray-100 rounded-full h-2.5">
                 <div className={`${item.color} h-2.5 rounded-full`} style={{ width: `${item.percentage}%` }}></div>
@@ -164,7 +164,7 @@ export default function RepPortal() {
           {commissionBreakdown.map((item) => (
             <div key={item.label} className="flex items-center gap-2">
               <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
-              <span className="text-xs text-gray-600">{item.label} ({item.percentage}%)</span>
+              <span className="text-xs text-gray-600 dark:text-gray-300">{item.label} ({item.percentage}%)</span>
             </div>
           ))}
         </div>

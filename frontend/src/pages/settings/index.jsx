@@ -41,10 +41,10 @@ export default function SettingsPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold flex items-center gap-2">
-          <Settings className="h-8 w-8 text-gray-700" />
+          <Settings className="h-8 w-8 text-gray-700 dark:text-gray-200" />
           Settings
         </h1>
-        <p className="text-gray-500 mt-1">Organization and system configuration</p>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">Organization and system configuration</p>
       </div>
 
       <Tabs defaultValue="organization" className="space-y-6">
@@ -210,35 +210,35 @@ export default function SettingsPage() {
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Commission Calculated</p>
-                  <p className="text-sm text-gray-500">Notify when commission calculations complete</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Notify when commission calculations complete</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Approval Required</p>
-                  <p className="text-sm text-gray-500">Notify when approval is pending</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Notify when approval is pending</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Dispute Filed</p>
-                  <p className="text-sm text-gray-500">Notify when a dispute is created</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Notify when a dispute is created</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">Data Import Complete</p>
-                  <p className="text-sm text-gray-500">Notify when data imports finish</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Notify when data imports finish</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>
               <div className="flex items-center justify-between p-3 border rounded-lg">
                 <div>
                   <p className="font-medium">System Alerts</p>
-                  <p className="text-sm text-gray-500">Critical system notifications</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Critical system notifications</p>
                 </div>
                 <input type="checkbox" defaultChecked className="h-4 w-4" />
               </div>

@@ -48,7 +48,7 @@ export default function LoginPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-slate-700"
+          className="bg-white dark:bg-[#0F1D32] dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-slate-700"
         >
           <div className="space-y-4">
             <div>
@@ -58,7 +58,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Username"
-                className="mt-1.5 h-11 w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7C6BFF]"
+                className="mt-1.5 h-11 w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0F1D32] dark:bg-slate-900 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7C6BFF]"
                 required
               />
             </div>
@@ -69,7 +69,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="mt-1.5 h-11 w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7C6BFF]"
+                className="mt-1.5 h-11 w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0F1D32] dark:bg-slate-900 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7C6BFF]"
                 required
               />
             </div>

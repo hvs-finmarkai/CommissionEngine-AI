@@ -87,7 +87,7 @@ export default function CalculatorPage() {
         <h1 className="text-3xl font-bold tracking-tight">
           Commission Calculator
         </h1>
-        <p className="text-gray-500 mt-1">
+        <p className="text-gray-500 dark:text-gray-400 mt-1">
           Calculate and review employee commission payouts
         </p>
       </div>
@@ -96,7 +96,7 @@ export default function CalculatorPage() {
         <CardContent className="p-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
               <Input
                 placeholder="Search employee..."
                 className="pl-9"
@@ -254,7 +254,7 @@ export default function CalculatorPage() {
                   <TableRow>
                     <TableCell
                       colSpan={13}
-                      className="text-center py-8 text-gray-500"
+                      className="text-center py-8 text-gray-500 dark:text-gray-400 dark:text-gray-500"
                     >
                       No matching records found
                     </TableCell>

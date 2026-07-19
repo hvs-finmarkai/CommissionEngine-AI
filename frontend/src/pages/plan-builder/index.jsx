@@ -25,7 +25,7 @@ const stats = [
   { label: "Active Plans", value: "7", icon: FileText, color: "text-[#7C6BFF]", bg: "bg-[#7C6BFF]/5" },
   { label: "Total Employees", value: "4,012", icon: FileText, color: "text-blue-600", bg: "bg-blue-50" },
   { label: "Draft Plans", value: "1", icon: FileText, color: "text-orange-600", bg: "bg-orange-50" },
-  { label: "Archived", value: "0", icon: Archive, color: "text-gray-600", bg: "bg-gray-50" },
+  { label: "Archived", value: "0", icon: Archive, color: "text-gray-600 dark:text-gray-300", bg: "bg-gray-50" },
 ];
 
 const statusStyles = {
@@ -58,8 +58,8 @@ export default function PlanBuilder() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Plan Builder</h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Plan Builder</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             Create and manage commission plans
           </p>
         </div>
@@ -77,8 +77,8 @@ export default function PlanBuilder() {
                 <stat.icon className={`w-5 h-5 ${stat.color}`} />
               </div>
               <div>
-                <p className="text-sm text-gray-500">{stat.label}</p>
-                <p className="text-xl font-bold text-gray-900">{stat.value}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{stat.label}</p>
+                <p className="text-xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
               </div>
             </CardContent>
           </Card>
@@ -89,7 +89,7 @@ export default function PlanBuilder() {
         <CardContent className="p-0">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <div className="relative flex-1 w-full sm:max-w-xs">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500" />
               <Input
                 placeholder="Search plans..."
                 value={search}
@@ -165,16 +165,16 @@ export default function PlanBuilder() {
                   key={plan.id}
                   className="hover:bg-[#7C6BFF]/5/50 transition-colors cursor-pointer"
                 >
-                  <TableCell className="font-mono text-xs text-gray-600">
+                  <TableCell className="font-mono text-xs text-gray-600 dark:text-gray-300">
                     {plan.id}
                   </TableCell>
-                  <TableCell className="font-medium text-gray-900">
+                  <TableCell className="font-medium text-gray-900 dark:text-white">
                     {plan.name}
                   </TableCell>
                   <TableCell>
                     <Badge>{plan.type}</Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600">{plan.role}</TableCell>
+                  <TableCell className="text-gray-600 dark:text-gray-300">{plan.role}</TableCell>
                   <TableCell>
                     <span
                       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${statusStyles[plan.status]}`}
@@ -182,11 +182,11 @@ export default function PlanBuilder() {
                       {plan.status.charAt(0).toUpperCase() + plan.status.slice(1)}
                     </span>
                   </TableCell>
-                  <TableCell className="text-gray-600">
+                  <TableCell className="text-gray-600 dark:text-gray-300">
                     {plan.employees.toLocaleString()}
                   </TableCell>
-                  <TableCell className="text-gray-600">v{plan.version}</TableCell>
-                  <TableCell className="text-gray-600">
+                  <TableCell className="text-gray-600 dark:text-gray-300">v{plan.version}</TableCell>
+                  <TableCell className="text-gray-600 dark:text-gray-300">
                     {new Date(plan.effectiveDate).toLocaleDateString("en-IN", {
                       day: "2-digit",
                       month: "short",
@@ -196,13 +196,13 @@ export default function PlanBuilder() {
                   <TableCell className="text-right">
                     <div className="flex items-center justify-end gap-1">
                       <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                        <Edit className="w-4 h-4 text-gray-500" />
+                        <Edit className="w-4 h-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
                       </Button>
                       <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                        <Copy className="w-4 h-4 text-gray-500" />
+                        <Copy className="w-4 h-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
                       </Button>
                       <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                        <Archive className="w-4 h-4 text-gray-500" />
+                        <Archive className="w-4 h-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
                       </Button>
                     </div>
                   </TableCell>
@@ -210,7 +210,7 @@ export default function PlanBuilder() {
               ))}
               {filteredPlans.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={9} className="text-center py-8 text-gray-500">
+                  <TableCell colSpan={9} className="text-center py-8 text-gray-500 dark:text-gray-400 dark:text-gray-500">
                     No plans found matching your filters.
                   </TableCell>
                 </TableRow>

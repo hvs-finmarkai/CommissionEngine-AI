@@ -16,7 +16,7 @@ const actionColors = {
   DISPUTE_CREATE: "bg-red-100 text-red-800 border-red-200",
   AI_VALIDATION: "bg-teal-100 text-teal-800 border-teal-200",
   PLAN_PUBLISH: "bg-emerald-100 text-emerald-800 border-emerald-200",
-  SYSTEM_BACKUP: "bg-gray-100 text-gray-800 border-gray-200",
+  SYSTEM_BACKUP: "bg-gray-100 text-gray-800 border-gray-200 dark:border-gray-700",
 };
 
 const stats = [
@@ -59,7 +59,7 @@ export default function AuditLogsPage() {
             <Shield className="h-8 w-8 text-[#7C6BFF]" />
             Audit Logs
           </h1>
-          <p className="text-gray-500 mt-1">Complete activity trail and compliance records</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-1">Complete activity trail and compliance records</p>
         </div>
         <Button className="gap-2">
           <Download className="h-4 w-4" />
@@ -70,7 +70,7 @@ export default function AuditLogsPage() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {stats.map((stat) => (
           <Card key={stat.label} className="p-4">
-            <p className="text-sm text-gray-500">{stat.label}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{stat.label}</p>
             <p className="text-2xl font-bold mt-1">{stat.value}</p>
           </Card>
         ))}
@@ -79,7 +79,7 @@ export default function AuditLogsPage() {
       <Card className="p-4">
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-gray-500" />
+            <Calendar className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
             <Input
               type="date"
               placeholder="Date range"
@@ -89,7 +89,7 @@ export default function AuditLogsPage() {
             />
           </div>
           <div className="flex items-center gap-2">
-            <User className="h-4 w-4 text-gray-500" />
+            <User className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
             <select
               value={selectedUser}
               onChange={(e) => setSelectedUser(e.target.value)}
@@ -102,7 +102,7 @@ export default function AuditLogsPage() {
             </select>
           </div>
           <div className="flex items-center gap-2">
-            <Filter className="h-4 w-4 text-gray-500" />
+            <Filter className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
             <select
               value={selectedAction}
               onChange={(e) => setSelectedAction(e.target.value)}
@@ -115,7 +115,7 @@ export default function AuditLogsPage() {
             </select>
           </div>
           <div className="flex items-center gap-2 flex-1 min-w-[200px]">
-            <Search className="h-4 w-4 text-gray-500" />
+            <Search className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
             <Input
               placeholder="Search logs..."
               value={searchQuery}
@@ -158,8 +158,8 @@ export default function AuditLogsPage() {
                   </Badge>
                 </TableCell>
                 <TableCell className="text-sm max-w-[200px] truncate">{log.details}</TableCell>
-                <TableCell className="text-sm text-gray-500">{log.oldValue || "—"}</TableCell>
-                <TableCell className="text-sm text-gray-500">{log.newValue || "—"}</TableCell>
+                <TableCell className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{log.oldValue || "—"}</TableCell>
+                <TableCell className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">{log.newValue || "—"}</TableCell>
               </TableRow>
             ))}
           </TableBody>

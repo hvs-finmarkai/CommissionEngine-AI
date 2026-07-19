@@ -41,14 +41,14 @@ export default function PnlImpactPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">P&L Impact</h1>
-        <p className="text-gray-500">Commission accrual and budget analysis</p>
+        <p className="text-gray-500 dark:text-gray-400 dark:text-gray-500">Commission accrual and budget analysis</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm font-medium text-gray-500">Revenue MTD</p>
-            <DollarSign className="h-4 w-4 text-gray-500" />
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Revenue MTD</p>
+            <DollarSign className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
           </div>
           <p className="text-2xl font-bold">₹35.78 Cr</p>
           <div className="flex items-center gap-1 mt-1 text-sm text-green-600">
@@ -58,8 +58,8 @@ export default function PnlImpactPage() {
         </Card>
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm font-medium text-gray-500">Commission Accrual</p>
-            <Target className="h-4 w-4 text-gray-500" />
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Commission Accrual</p>
+            <Target className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
           </div>
           <p className="text-2xl font-bold">₹8.47 Cr</p>
           <div className="flex items-center gap-1 mt-1 text-sm text-green-600">
@@ -69,8 +69,8 @@ export default function PnlImpactPage() {
         </Card>
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm font-medium text-gray-500">Commission %</p>
-            <PieChart className="h-4 w-4 text-gray-500" />
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Commission %</p>
+            <PieChart className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
           </div>
           <p className="text-2xl font-bold">23.7%</p>
           <div className="flex items-center gap-1 mt-1 text-sm text-amber-600">
@@ -80,15 +80,15 @@ export default function PnlImpactPage() {
         </Card>
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm font-medium text-gray-500">Budget MTD</p>
-            <Target className="h-4 w-4 text-gray-500" />
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Budget MTD</p>
+            <Target className="h-4 w-4 text-gray-500 dark:text-gray-400 dark:text-gray-500" />
           </div>
           <p className="text-2xl font-bold">₹10.80 Cr</p>
-          <p className="text-sm text-gray-500 mt-1">Allocated this month</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Allocated this month</p>
         </Card>
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm font-medium text-gray-500">Budget Variance</p>
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-500">Budget Variance</p>
             <ArrowUpRight className="h-4 w-4 text-green-600" />
           </div>
           <p className="text-2xl font-bold text-green-600">-₹2.33 Cr</p>
@@ -100,12 +100,12 @@ export default function PnlImpactPage() {
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="text-lg font-semibold">Budget Utilization</h3>
-            <p className="text-sm text-gray-500">₹8.47 Cr of ₹10.80 Cr utilized</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">₹8.47 Cr of ₹10.80 Cr utilized</p>
           </div>
           <Badge variant="secondary">78.4%</Badge>
         </div>
         <Progress value={78.4} className="h-3" />
-        <div className="flex justify-between mt-2 text-xs text-gray-500">
+        <div className="flex justify-between mt-2 text-xs text-gray-500 dark:text-gray-400 dark:text-gray-500">
           <span>0%</span>
           <span>50%</span>
           <span>100%</span>
@@ -150,7 +150,7 @@ export default function PnlImpactPage() {
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="text-lg font-semibold">Commission Forecast</h3>
-            <p className="text-sm text-gray-500">Next 3 months projected commission</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Next 3 months projected commission</p>
           </div>
           <div className="flex items-center gap-1 text-sm text-amber-600">
             <TrendingUp className="h-4 w-4" />
@@ -168,15 +168,15 @@ export default function PnlImpactPage() {
         </ResponsiveContainer>
         <div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t">
           <div className="text-center">
-            <p className="text-sm text-gray-500">July 2026</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">July 2026</p>
             <p className="text-lg font-bold">₹8.90 Cr</p>
           </div>
           <div className="text-center">
-            <p className="text-sm text-gray-500">August 2026</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">August 2026</p>
             <p className="text-lg font-bold">₹9.20 Cr</p>
           </div>
           <div className="text-center">
-            <p className="text-sm text-gray-500">September 2026</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">September 2026</p>
             <p className="text-lg font-bold">₹9.80 Cr</p>
           </div>
         </div>
