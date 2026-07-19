@@ -17,13 +17,34 @@ import {
 } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 import {
-  dashboardStats as kpiData,
   workflowSteps,
-  validationAlerts as aiAlerts,
   topEarners,
   recentApprovals,
-  pnlSummary as pnlImpactSummary,
 } from '@/data/mock-data';
+
+const kpiData = [
+  { title: 'Total Commission Accrued', value: '₹ 8,47,32,150', subtitle: '↑ 18.6% vs Sep 2024', trend: 'up' },
+  { title: 'Employees Processed', value: '3,742 / 4,012', subtitle: '93.3% Completed', trend: 'neutral' },
+  { title: 'Average Commission', value: '₹ 22,644', subtitle: '↑ 12.4% vs Sep 2024', trend: 'up' },
+  { title: 'Budget Utilization', value: '78.4%', subtitle: '₹ 8.47 Cr / ₹ 10.80 Cr', trend: 'neutral' },
+  { title: 'Pending Approvals', value: '23', subtitle: '3 Urgent', trend: 'urgent' },
+  { title: 'P&L Impact (MTD)', value: '₹ 35,78,45,000', subtitle: '23.7% of Revenue', trend: 'neutral' },
+];
+
+const aiAlerts = [
+  { label: 'High Commission Anomalies', count: 3, color: 'bg-red-500', severity: 'critical' },
+  { label: 'Cap Breaches', count: 2, color: 'bg-amber-500', severity: 'warning' },
+  { label: 'Data Quality Issues', count: 3, color: 'bg-amber-500', severity: 'warning' },
+  { label: 'Rule Conflicts', count: 0, color: 'bg-emerald-500', severity: 'low' },
+];
+
+const pnlImpactSummary = [
+  { label: 'Revenue (MTD)', value: '₹ 35,78,45,000' },
+  { label: 'Commission Accrual', value: '₹ 8,47,32,150' },
+  { label: 'Commission % of Revenue', value: '23.7%' },
+  { label: 'Budget (MTD)', value: '₹ 10,80,00,000' },
+  { label: 'Budget Variance', value: '-₹ 2,32,67,850', change: '78.4%' },
+];
 
 const kpiIcons = [
   { icon: DollarSign, bg: 'bg-emerald-100', text: 'text-emerald-600' },
@@ -158,7 +179,7 @@ export default function Dashboard() {
                   </div>
                   <div>
                     <p className="text-sm font-medium">{earner.name}</p>
-                    <p className="text-xs text-muted-foreground">{earner.department}</p>
+                    <p className="text-xs text-muted-foreground">Sales</p>
                   </div>
                 </div>
                 <span className="text-sm font-semibold">{formatCurrency(earner.amount)}</span>
@@ -197,9 +218,9 @@ export default function Dashboard() {
                     <td className="py-3">
                       <Badge
                         className={`text-xs ${
-                          item.status === 'Approved'
+                          item.status === 'approved'
                             ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-100'
-                            : item.status === 'Pending'
+                            : item.status === 'pending'
                             ? 'bg-amber-100 text-amber-700 hover:bg-amber-100'
                             : 'bg-red-100 text-red-700 hover:bg-red-100'
                         }`}
