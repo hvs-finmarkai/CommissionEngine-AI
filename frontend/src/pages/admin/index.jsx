@@ -1,28 +1,38 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Users, Plus, Trash2, Edit, Shield, Search, X } from 'lucide-react'
+import { Users, Plus, Trash2, Edit, Shield, Search, X, Loader2 } from 'lucide-react'
 
-const initialUsers = [
-  { id: 1, name: 'Anita Desai', email: 'anita@finmark.ai', role: 'Admin', department: 'Finance', status: 'active', lastLogin: '19 Jul 2026, 09:00 AM' },
-  { id: 2, name: 'Vikash Kumar', email: 'vikash@finmark.ai', role: 'Sales Manager', department: 'Sales', status: 'active', lastLogin: '19 Jul 2026, 08:45 AM' },
-  { id: 3, name: 'Priya Sharma', email: 'priya@finmark.ai', role: 'Finance', department: 'Finance', status: 'active', lastLogin: '18 Jul 2026, 06:30 PM' },
-  { id: 4, name: 'Rahul Verma', email: 'rahul@finmark.ai', role: 'HR', department: 'HR', status: 'active', lastLogin: '18 Jul 2026, 05:15 PM' },
-  { id: 5, name: 'Neha Singh', email: 'neha@finmark.ai', role: 'Employee', department: 'Sales', status: 'active', lastLogin: '17 Jul 2026, 04:00 PM' },
-  { id: 6, name: 'Arjun Patel', email: 'arjun@finmark.ai', role: 'Employee', department: 'Operations', status: 'inactive', lastLogin: '10 Jul 2026, 11:00 AM' },
-]
-
+const API_URL = import.meta.env.VITE_API_URL || 'https://commissionengine-api.onrender.com'
 const roleOptions = ['Admin', 'Finance', 'HR', 'Sales Manager', 'Employee']
 const departmentOptions = ['Finance', 'Sales', 'HR', 'Operations', 'Technology']
 
 export default function AdminUsers() {
-  const [users, setUsers] = useState(initialUsers)
+  const [users, setUsers] = useState([])
   const [search, setSearch] = useState('')
   const [showForm, setShowForm] = useState(false)
   const [editingUser, setEditingUser] = useState(null)
   const [formData, setFormData] = useState({ name: '', email: '', role: 'Employee', department: 'Sales', password: '' })
+  const [loading, setLoading] = useState(true)
+  const [saving, setSaving] = useState(false)
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
+  async function fetchUsers() {
+    try {
+      const res = await fetch(`${API_URL}/api/users`)
+      const data = await res.json()
+      setUsers(data.users || [])
+    } catch {
+      setUsers([])
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const filteredUsers = users.filter(u =>
     u.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -30,22 +40,32 @@ export default function AdminUsers() {
     u.role.toLowerCase().includes(search.toLowerCase())
   )
 
-  function handleCreate() {
+  async function handleCreate() {
     if (!formData.name || !formData.email) return
-    if (editingUser) {
-      setUsers(users.map(u => u.id === editingUser.id ? { ...u, ...formData } : u))
-      setEditingUser(null)
-    } else {
-      const newUser = {
-        id: Date.now(),
-        ...formData,
-        status: 'active',
-        lastLogin: 'Never',
+    setSaving(true)
+    try {
+      if (editingUser) {
+        await fetch(`${API_URL}/api/users/${editingUser.id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: formData.name, email: formData.email, role: formData.role, department: formData.department }),
+        })
+      } else {
+        await fetch(`${API_URL}/api/users`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        })
       }
-      setUsers([...users, newUser])
+      await fetchUsers()
+      setFormData({ name: '', email: '', role: 'Employee', department: 'Sales', password: '' })
+      setShowForm(false)
+      setEditingUser(null)
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setSaving(false)
     }
-    setFormData({ name: '', email: '', role: 'Employee', department: 'Sales', password: '' })
-    setShowForm(false)
   }
 
   function handleEdit(user) {
@@ -54,12 +74,30 @@ export default function AdminUsers() {
     setShowForm(true)
   }
 
-  function handleDelete(userId) {
-    setUsers(users.filter(u => u.id !== userId))
+  async function handleDelete(userId) {
+    try {
+      await fetch(`${API_URL}/api/users/${userId}`, { method: 'DELETE' })
+      await fetchUsers()
+    } catch (e) {
+      console.error(e)
+    }
   }
 
-  function handleToggleStatus(userId) {
-    setUsers(users.map(u => u.id === userId ? { ...u, status: u.status === 'active' ? 'inactive' : 'active' } : u))
+  async function handleToggleStatus(userId) {
+    try {
+      await fetch(`${API_URL}/api/users/${userId}/toggle-status`, { method: 'PATCH' })
+      await fetchUsers()
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="w-8 h-8 animate-spin text-[#7C6BFF]" />
+      </div>
+    )
   }
 
   return (
@@ -156,7 +194,8 @@ export default function AdminUsers() {
               </select>
             </div>
             <div className="flex items-end">
-              <Button onClick={handleCreate} className="w-full">
+              <Button onClick={handleCreate} disabled={saving} className="w-full">
+                {saving ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : null}
                 {editingUser ? 'Update User' : 'Create User'}
               </Button>
             </div>
@@ -209,7 +248,7 @@ export default function AdminUsers() {
                       </Badge>
                     </button>
                   </td>
-                  <td className="py-3 px-4 text-gray-500 dark:text-gray-400 text-xs">{user.lastLogin}</td>
+                  <td className="py-3 px-4 text-gray-500 dark:text-gray-400 text-xs">{user.last_login}</td>
                   <td className="py-3 px-4">
                     <div className="flex items-center gap-2">
                       <button onClick={() => handleEdit(user)} className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors">
@@ -226,7 +265,7 @@ export default function AdminUsers() {
           </table>
           {filteredUsers.length === 0 && (
             <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-              No users found matching your search.
+              No users found.
             </div>
           )}
         </div>
