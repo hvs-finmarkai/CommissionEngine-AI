@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: commissionengine-api
+    runtime: python
+    repo: https://github.com/hvs-finmarkai/CommissionEngine-AI
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: commissionengine-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 60
+      - key: REDIS_URL
+        value: redis://localhost:6379/0
+      - key: CORS_ORIGINS
+        value: https://frontend-dusky-six-16.vercel.app,https://frontend-aao7jwppt-fin-markai.vercel.app
+
+databases:
+  - name: commissionengine-db
+    plan: free
+    databaseName: commission_engine
+    user: commission_user
