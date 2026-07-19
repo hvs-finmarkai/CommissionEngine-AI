@@ -5,18 +5,15 @@ import { cn } from "@/lib/utils";
 const Progress = React.forwardRef(({ className, value, ...props }, ref) => (
   <ProgressPrimitive.Root
     ref={ref}
-    className={cn(
-      "relative h-2 w-full overflow-hidden rounded-full bg-gray-100",
-      className
-    )}
+    className={cn("relative h-2 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800", className)}
     {...props}
   >
     <ProgressPrimitive.Indicator
-      className="h-full w-full flex-1 bg-[#7C6BFF] transition-all duration-300 ease-in-out"
+      className="h-full w-full flex-1 bg-[#7C6BFF] transition-all rounded-full"
       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
     />
   </ProgressPrimitive.Root>
 ));
-Progress.displayName = "Progress";
+Progress.displayName = ProgressPrimitive.Root.displayName;
 
 export { Progress };

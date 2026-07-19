@@ -110,7 +110,7 @@ export default function Dashboard() {
                       ? 'bg-emerald-500 border-emerald-500 text-white'
                       : step.status === 'active'
                       ? 'bg-[#7C6BFF] border-[#7C6BFF] text-white animate-pulse'
-                      : 'bg-gray-100 border-gray-300 text-gray-400'
+                      : 'bg-gray-100 dark:bg-gray-800 border-gray-300 text-gray-400'
                   }`}
                 >
                   {step.status === 'completed' ? (

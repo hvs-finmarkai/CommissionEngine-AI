@@ -97,7 +97,7 @@ export default function Approvals() {
                 return (
                   <div key={level} className="flex items-start gap-3">
                     <div className="flex flex-col items-center">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${config ? config.bg : "bg-gray-100"}`}>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${config ? config.bg : "bg-gray-100 dark:bg-gray-800 dark:bg-gray-800"}`}>
                         <StatusIcon className={`w-4 h-4 ${config ? config.color : "text-gray-400 dark:text-gray-500"}`} />
                       </div>
                       {index < approvalLevels.length - 1 && (

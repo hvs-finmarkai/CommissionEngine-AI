@@ -105,7 +105,7 @@ export default function CalculatorPage() {
               />
             </div>
             <select
-              className="flex h-10 w-full rounded-md border border-input bg-gray-50 px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex h-10 w-full rounded-md border border-input bg-gray-50 dark:bg-[#0A1628] px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               value={selectedPlan}
               onChange={(e) => setSelectedPlan(e.target.value)}
             >
@@ -116,7 +116,7 @@ export default function CalculatorPage() {
               ))}
             </select>
             <select
-              className="flex h-10 w-full rounded-md border border-input bg-gray-50 px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex h-10 w-full rounded-md border border-input bg-gray-50 dark:bg-[#0A1628] px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               value={selectedPeriod}
               onChange={(e) => setSelectedPeriod(e.target.value)}
             >
@@ -228,7 +228,7 @@ export default function CalculatorPage() {
                               {breakdownData[row.id].map((step) => (
                                 <div
                                   key={step.step}
-                                  className="flex items-center justify-between py-1 px-3 rounded-md bg-gray-50 border"
+                                  className="flex items-center justify-between py-1 px-3 rounded-md bg-gray-50 dark:bg-[#0A1628] border"
                                 >
                                   <div className="flex items-center gap-3">
                                     <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">

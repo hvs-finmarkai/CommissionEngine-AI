@@ -123,7 +123,7 @@ export default function RepPortal() {
             </thead>
             <tbody>
               {earningsData.map((row) => (
-                <tr key={row.month} className="border-b border-gray-100 hover:bg-gray-50">
+                <tr key={row.month} className="border-b border-gray-100 hover:bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]">
                   <td className="py-3 px-2 font-medium text-gray-900 dark:text-white">{row.month}</td>
                   <td className="py-3 px-2 text-right text-gray-700 dark:text-gray-200">{row.base}</td>
                   <td className="py-3 px-2 text-right text-gray-700 dark:text-gray-200">{row.accelerator}</td>
@@ -154,7 +154,7 @@ export default function RepPortal() {
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{item.label}</span>
                 <span className="text-sm font-semibold text-gray-900 dark:text-white">{item.percentage}%</span>
               </div>
-              <div className="w-full bg-gray-100 rounded-full h-2.5">
+              <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5">
                 <div className={`${item.color} h-2.5 rounded-full`} style={{ width: `${item.percentage}%` }}></div>
               </div>
             </div>

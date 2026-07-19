@@ -16,7 +16,7 @@ const actionColors = {
   DISPUTE_CREATE: "bg-red-100 text-red-800 border-red-200",
   AI_VALIDATION: "bg-teal-100 text-teal-800 border-teal-200",
   PLAN_PUBLISH: "bg-emerald-100 text-emerald-800 border-emerald-200",
-  SYSTEM_BACKUP: "bg-gray-100 text-gray-800 border-gray-200 dark:border-gray-700",
+  SYSTEM_BACKUP: "bg-gray-100 dark:bg-gray-800 text-gray-800 border-gray-200 dark:border-gray-700",
 };
 
 const stats = [
@@ -93,7 +93,7 @@ export default function AuditLogsPage() {
             <select
               value={selectedUser}
               onChange={(e) => setSelectedUser(e.target.value)}
-              className="border rounded-md px-3 py-2 text-sm bg-gray-50"
+              className="border rounded-md px-3 py-2 text-sm bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]"
             >
               <option value="">All Users</option>
               {uniqueUsers.map((user) => (
@@ -106,7 +106,7 @@ export default function AuditLogsPage() {
             <select
               value={selectedAction}
               onChange={(e) => setSelectedAction(e.target.value)}
-              className="border rounded-md px-3 py-2 text-sm bg-gray-50"
+              className="border rounded-md px-3 py-2 text-sm bg-gray-50 dark:bg-[#0A1628] dark:bg-[#0A1628]"
             >
               <option value="">All Actions</option>
               {actionTypes.map((action) => (
@@ -153,7 +153,7 @@ export default function AuditLogsPage() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <Badge variant="outline" className={actionColors[log.action] || "bg-gray-100 text-gray-800"}>
+                  <Badge variant="outline" className={actionColors[log.action] || "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100"}>
                     {log.action.replace(/_/g, " ")}
                   </Badge>
                 </TableCell>
