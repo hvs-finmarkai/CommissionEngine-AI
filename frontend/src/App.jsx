@@ -19,6 +19,7 @@ import Analytics from './pages/analytics'
 import Reports from './pages/reports'
 import AuditLogs from './pages/audit-logs'
 import Settings from './pages/settings'
+import AdminUsers from './pages/admin'
 
 const queryClient = new QueryClient()
 
@@ -46,6 +47,8 @@ export default function App() {
               <Route path="/reports" element={<Reports />} />
               <Route path="/audit-logs" element={<AuditLogs />} />
               <Route path="/settings" element={<Settings />} />
+            <Route path="/admin" element={<AdminUsers />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
             </Route>
           </Routes>
         </BrowserRouter>

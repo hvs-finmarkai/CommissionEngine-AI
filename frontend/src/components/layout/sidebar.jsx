@@ -10,6 +10,7 @@ import {
   CheckCircle,
   TrendingUp,
   User,
+  Users,
   MessageSquare,
   BarChart3,
   FileBarChart,
@@ -70,6 +71,7 @@ const navGroups = [
 ]
 
 const bottomNavigation = [
+  { label: 'Admin / Users', icon: Users, path: '/admin' },
   { label: 'Audit Logs', icon: Shield, path: '/audit-logs' },
   { label: 'Settings', icon: Settings, path: '/settings' },
 ]
