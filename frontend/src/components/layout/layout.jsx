@@ -1,20 +1,37 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
-import Sidebar from "./sidebar";
-import Navbar from "./navbar";
+import { useEffect } from 'react'
+import { Outlet, useNavigate } from 'react-router-dom'
+import useAppStore from '@/hooks/use-app-store'
+import Sidebar from './sidebar'
+import Navbar from './navbar'
+
+function cn(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 export default function Layout() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { sidebarCollapsed, user } = useAppStore()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login')
+    }
+  }, [user, navigate])
+
+  if (!user) return null
 
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-50">
-      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <div className="flex-1 flex flex-col min-w-0">
-        <Navbar onMenuToggle={() => setSidebarOpen((prev) => !prev)} />
-        <main className="flex-1 overflow-y-auto p-4 lg:p-6">
-          <Outlet />
-        </main>
-      </div>
+    <div className="min-h-screen bg-gray-50 dark:bg-[#060E1A]">
+      <Sidebar />
+      <Navbar />
+      <main
+        className={cn(
+          'min-h-[calc(100vh-4rem)] mt-16 transition-all duration-300 p-6',
+          sidebarCollapsed ? 'ml-[70px]' : 'ml-[260px]'
+        )}
+      >
+        <Outlet />
+      </main>
     </div>
-  );
+  )
 }
